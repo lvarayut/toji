@@ -1,0 +1,44 @@
+{
+  "name": "toji",
+  "productName": "Toji",
+  "version": "0.0.0",
+  "description": "Toji helps you get an awesome text emoji quickly with a simple shortcut",
+  "license": "MIT",
+  "repository": "lvarayut/toji",
+  "author": {
+    "name": "Varayut Lerdkanlayanawat",
+    "email": "l.varayut@gmail.com",
+    "url": "github.com/lvarayut"
+  },
+  "scripts": {
+    "start": "electron .",
+    "lint": " eslint --ignore-path .gitignore **/*.js",
+    "build": "electron-packager . --out=dist --app-version=$npm_package_version --prune --asar --overwrite --all"
+  },
+  "files": [
+    "index.js",
+    "index.html",
+    "index.css"
+  ],
+  "keywords": [
+    "toji",
+    "emoji",
+    "text-faces",
+    "electron-app",
+    "electron"
+  ],
+  "dependencies": {
+    "electron-debug": "^1.0.0",
+    "menubar": "^4.1.1"
+  },
+  "devDependencies": {
+    "devtron": "^1.1.0",
+    "electron-packager": "^7.0.0",
+    "electron-prebuilt": "^1.0.1",
+    "eslint": "^2.10.2",
+    "eslint-config-airbnb": "^9.0.1",
+    "eslint-plugin-import": "^1.8.0",
+    "eslint-plugin-jsx-a11y": "^1.2.1",
+    "eslint-plugin-react": "^5.1.1"
+  }
+}
