@@ -1,9 +1,11 @@
 const menubar = require('menubar');
-const mb = menubar({ preloadWindow: true });
+const ipc = require('electron').ipcMain;
+const mb = menubar({ preloadWindow: true, icon: __dirname + '/IconTemplate.png' });
 
 // adds debug features like hotkeys for triggering dev tools and reload
 require('electron-debug')();
 
-mb.on('ready', () => {
+ipc.on('hide', () => {
+  mb.hideWindow();
 });
 
