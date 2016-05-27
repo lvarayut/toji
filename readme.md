@@ -1,27 +1,18 @@
 # Toji
 
-> Toji helps you get an awesome text emoji quickly with a simple shortcut
+> Toji helps you get an awesome text emoji quickly with a simple shortcut ლ(^o^ლ)
+
+## Install
+
+[Download](https://github.com/lvarayut/toji/releases/latest) a package for your operating system, unzip, and install it.
 
 ## Dev
 
-```
+```bash
+$ git clone https://github.com/lvarayut/toji && cd toji
 $ npm install
-```
-
-### Run
-
-```
 $ npm start
 ```
-
-### Build
-
-```
-$ npm run build
-```
-
-Builds the app for OS X, Linux, and Windows, using [electron-packager](https://github.com/electron-userland/electron-packager).
-
 
 ## License
 
