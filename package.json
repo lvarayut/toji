@@ -14,9 +14,10 @@
     "start": "electron .",
     "lint": " eslint --ignore-path .gitignore **/*.js",
     "build": "npm run build:osx && npm run build:linux && npm run build:window",
-    "build:osx": "electron-packager . --out=dist --app-version=$npm_package_version --prune --asar --overwrite --platform=darwin --arch=x64 --icon=icons/Icon.icns",
-    "build:linux": "electron-packager . --out=dist --app-version=$npm_package_version --prune --asar --overwrite --platform=linux --arch=x64",
-    "build:window": "electron-packager . --out=dist --app-version=$npm_package_version --prune --asar --overwrite --platform=win32 --arch=ia32 --icon=icons/Icon.ico"
+    "build:master": "electron-packager . --out=dist --app-version=$npm_package_version --prune --asar --overwrite",
+    "build:osx": "npm run build:master -- --platform=darwin --arch=x64 --icon=icons/Icon.icns && cd dist && zip -9rqy Toji-osx.zip Toji-darwin-x64",
+    "build:linux": "npm run build:master -- --platform=linux --arch=x64 && cd dist && zip -9rqy Toji-linux.zip Toji-linux-x64",
+    "build:window": "npm run build:master -- --platform=win32 --arch=ia32 --icon=icons/Icon.ico && cd dist && zip -9rqy Toji-windows.zip Toji-win32-ia32"
   },
   "files": [
     "index.js",
