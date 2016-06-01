@@ -1,3 +1,7 @@
+/* ==========================================================================
+   GENERAL
+   ========================================================================== */
+
 html,
 body {
   font-family: Roboto, sans-serif;
@@ -5,19 +9,47 @@ body {
   padding: 0;
 }
 
+a:hover {
+  color: #3D3D3D;
+  transition: all 0.5s ease-out;
+}
+
+.hide {
+  visibility: hidden;
+}
+
+/* ==========================================================================
+   HEADER
+   ========================================================================== */
+
 header {
   background: #3893C6;
   color: #FFFFFF;
   font-weight: bold;
+  left: 0;
   letter-spacing: 2px;
   padding: 8px;
   position: fixed;
+  right: 0;
   text-align: center;
   top: 0;
-  width: 100%;
 }
 
-.main {
+a.settings {
+  position: absolute;
+  right: 10px;
+}
+
+a.back {
+  position: absolute;
+  left: 10px;
+}
+
+/* ==========================================================================
+   ROOT
+   ========================================================================== */
+
+.root {
   bottom: 0;
   left: 0;
   overflow: scroll;
@@ -39,6 +71,4 @@ a.emoji {
 a.emoji:hover {
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
   color: #3893C6;
-  transition: all 0.5s ease-out;
 }
-
