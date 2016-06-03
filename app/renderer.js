@@ -3,18 +3,23 @@ const clipboard = require('electron').clipboard;
 const ipc = require('electron').ipcRenderer;
 const utils = require('./utils.js');
 
+const $ = document.querySelector.bind(document);
+const $$ = document.querySelectorAll.bind(document);
+
 // Read up all the elements
-const mainElem = document.querySelector('.root');
-const settingsElem = document.querySelector('.settings');
-const backElem = document.querySelector('.back');
+const mainElem = $('.root');
+const settingsElem = $('.settings');
+const backElem = $('.back');
 
 // Display all the faces
 function renderEmojis() {
   mainElem.innerHTML = faces.map(e => `<a class="emoji">${e}</a>`).join('');
 }
 
+renderEmojis();
+
 // Bind onclick to emoji elements
-const elems = document.querySelectorAll('.emoji');
+const elems = $$('.emoji');
 for (let i = 0; i < elems.length; i++) {
   elems[i].onclick = (e) => {
     clipboard.writeText(e.target.innerHTML);
@@ -33,6 +38,4 @@ backElem.onclick = () => {
   backElem.classList.add('hide');
   renderEmojis();
 };
-
-renderEmojis();
 
