@@ -8,7 +8,7 @@ const $$ = document.querySelectorAll.bind(document);
 
 // Read up all the elements
 const mainElem = $('.root');
-const settingsElem = $('.settings');
+const settingsElem = $('.gear');
 const backElem = $('.back');
 
 // Display all the faces

@@ -4,6 +4,7 @@ const path = require('path');
 
 const ipc = electron.ipcMain;
 const globalShortcut = electron.globalShortcut;
+const shell = electron.shell;
 const mb = menubar({ dir: path.join(__dirname, 'app'), preloadWindow: true, icon: path.join(__dirname, 'app', 'icons', 'IconTemplate.png') });
 const app = mb.app;
 
@@ -18,6 +19,11 @@ app.on('ready', () => {
   globalShortcut.register('Control+space', () => {
     if (mb.window.isVisible()) mb.hideWindow();
     else mb.showWindow();
+  });
+
+  mb.window.webContents.on('new-window', (e, url) => {
+    e.preventDefault();
+    shell.openExternal(url);
   });
 });
 

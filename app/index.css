@@ -4,13 +4,23 @@
 
 html,
 body {
+  color: #34495E;
   font-family: Roboto, sans-serif;
   margin: 0;
   padding: 0;
 }
 
-a:hover {
-  color: #3D3D3D;
+small {
+  color: #D6D9DB;
+  font-size: 0.8em;
+}
+
+a {
+  color: inherit;
+}
+
+a:hover,
+button:hover {
   transition: all 0.5s ease-out;
 }
 
@@ -35,14 +45,14 @@ header {
   top: 0;
 }
 
-a.settings {
+a.gear {
   position: absolute;
   right: 10px;
 }
 
 a.back {
-  position: absolute;
   left: 10px;
+  position: absolute;
 }
 
 /* ==========================================================================
@@ -71,4 +81,49 @@ a.emoji {
 a.emoji:hover {
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
   color: #3893C6;
+}
+
+/* ==========================================================================
+   SETTINGS
+   ========================================================================== */
+
+h4 {
+  margin: 20px 20px 5px 20px;
+}
+
+form {
+  text-align: center;
+}
+
+input[type='text'] {
+  border: 1px solid #EEEEEE;
+  box-sizing: border-box;
+  font-size: 15px;
+  height: 20px;
+  margin-top: 10px;
+  outline: none;
+  padding: 25px;
+  transition: all 1s ease-out;
+  width: 100%;
+}
+
+input[type='text']:focus {
+  border: 1px solid #3893C6;
+}
+
+button {
+  background-color: #3893C6;
+  border: none;
+  color: #FFFFFF;
+  font-size: 1em;
+  margin-top: 180px;
+  padding: 7px 150px;
+}
+
+button:hover {
+  background-color: #5BACD8;
+}
+
+.settings label {
+  font-weight: bold;
 }
