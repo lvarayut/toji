@@ -28,6 +28,7 @@
   ],
   "dependencies": {
     "cool-ascii-faces": "^1.3.4",
+    "electron-config": "^0.1.1",
     "electron-debug": "^1.0.0",
     "menubar": "^4.1.1"
   },
