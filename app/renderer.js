@@ -24,10 +24,17 @@ function renderEmojis() {
 function setupSettings() {
   const submitFormElem = $('#settings');
   const toggleKeyElem = $('#toggle-key');
+  const btnSaveElem = $('#btn-save');
   toggleKeyElem.value = conf.get('toggleKey') || '';
   submitFormElem.onsubmit = (e) => {
     e.preventDefault();
     ipc.send('save-preferences', 'toggleKey', toggleKeyElem.value);
+    btnSaveElem.innerHTML = '<i class="fa fa-check-circle-o"></i> Saved';
+  };
+
+  // Reset the text of save button when any fields in the form changed
+  toggleKeyElem.onkeydown = () => {
+    btnSaveElem.innerHTML = 'Save';
   };
 }
 

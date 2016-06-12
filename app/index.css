@@ -117,7 +117,9 @@ button {
   color: #FFFFFF;
   font-size: 1em;
   margin-top: 180px;
-  padding: 7px 150px;
+  outline: 0;
+  padding: 7px 0;
+  width: 350px;
 }
 
 button:hover {
