@@ -28,6 +28,10 @@ button:hover {
   visibility: hidden;
 }
 
+.align-center {
+  text-align: center;
+}
+
 /* ==========================================================================
    HEADER
    ========================================================================== */
@@ -91,10 +95,6 @@ h4 {
   margin: 20px 20px 5px 20px;
 }
 
-form {
-  text-align: center;
-}
-
 input[type='text'] {
   border: 1px solid #EEEEEE;
   box-sizing: border-box;
@@ -115,8 +115,12 @@ button {
   background-color: #3893C6;
   border: none;
   color: #FFFFFF;
+  display: block;
+  float: bottom;
   font-size: 1em;
-  margin-top: 180px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 90px;
   outline: 0;
   padding: 7px 0;
   width: 350px;
@@ -128,4 +132,94 @@ button:hover {
 
 .settings label {
   font-weight: bold;
+}
+
+#toggle-key {
+  padding-left: 45px;
+}
+
+div.options {
+  margin: 0 45px;
+}
+
+div.options > label,
+div.options > .onoff {
+  display: inline-block;
+  font-size: 15px;
+  font-weight: normal;
+  line-height: 25px;
+  margin: 15px 0 0;
+}
+
+div.options > .onoff {
+  float: right;
+}
+
+/* CHECKBOX */
+.onoff {
+  position: relative;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+  width: 70px;
+}
+.onoff-checkbox {
+  display: none;
+}
+.onoff-label {
+  border-radius: 20px;
+  cursor: pointer;
+  display: block;
+  overflow: hidden;
+}
+.onoff-inner {
+  display: block;
+  margin-left: -100%;
+  transition: margin 0.3s ease-in 0s;
+  width: 200%;
+}
+.onoff-inner:before,
+.onoff-inner:after {
+  box-sizing: border-box;
+  color: #FFFFFF;
+  display: block;
+  float: left;
+  font-size: 12px;
+  font-weight: bold;
+  height: 25px;
+  line-height: 25px;
+  padding: 0;
+  width: 50%;
+}
+.onoff-inner:before {
+  background-color: #3893C6;
+  color: #FFFFFF;
+  content: 'ON';
+  padding-left: 20px;
+}
+.onoff-inner:after {
+  background-color: #EEEEEE;
+  color: #FFFFFF;
+  content: 'OFF';
+  padding-right: 14px;
+  text-align: right;
+}
+.onoff-switch {
+  background: #FFFFFF;
+  border: 1px solid #EEEEEE;
+  border-radius: 20px;
+  bottom: 0;
+  display: block;
+  margin: 1px;
+  position: absolute;
+  right: 45px;
+  top: 0;
+  transition: all 0.3s ease-in 0s;
+  width: 20px;
+}
+.onoff-checkbox:checked + .onoff-label .onoff-inner {
+  margin-left: 0;
+}
+.onoff-checkbox:checked + .onoff-label .onoff-switch {
+  right: 0;
 }
