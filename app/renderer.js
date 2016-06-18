@@ -24,16 +24,23 @@ function renderEmojis() {
 function setupSettings() {
   const submitFormElem = $('#settings');
   const toggleKeyElem = $('#toggle-key');
+  const onoffLogin = $('#onoff-login');
   const btnSaveElem = $('#btn-save');
   toggleKeyElem.value = conf.get('toggleKey') || '';
   submitFormElem.onsubmit = (e) => {
     e.preventDefault();
-    ipc.send('save-preferences', 'toggleKey', toggleKeyElem.value);
+    ipc.send('set-toggle-key', 'toggleKey', toggleKeyElem.value);
+
+    if (onoffLogin.checked) ipc.send('enable-login');
+    else ipc.send('disable-login');
     btnSaveElem.innerHTML = '<i class="fa fa-check-circle-o"></i> Saved';
   };
 
   // Reset the text of save button when any fields in the form changed
   toggleKeyElem.onkeydown = () => {
+    btnSaveElem.innerHTML = 'Save';
+  };
+  onoffLogin.onchange = () => {
     btnSaveElem.innerHTML = 'Save';
   };
 }
