@@ -56,3 +56,7 @@ ipc.on('enable-login', () => {
 ipc.on('disable-login', () => {
   autoLauncher.disable();
 });
+
+ipc.on('quit', () => {
+  app.quit();
+});

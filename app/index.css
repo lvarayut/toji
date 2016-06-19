@@ -51,6 +51,11 @@ header {
 
 a.gear {
   position: absolute;
+  right: 40px;
+}
+
+a.quit {
+  position: absolute;
   right: 10px;
 }
 

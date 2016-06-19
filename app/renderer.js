@@ -11,6 +11,7 @@ const $$ = document.querySelectorAll.bind(document);
 // Read up all the elements
 const mainElem = $('.root');
 const settingsElem = $('.gear');
+const quitElem = $('.quit');
 const backElem = $('.back');
 
 // Display all the faces
@@ -68,5 +69,9 @@ settingsElem.onclick = () => {
 backElem.onclick = () => {
   backElem.classList.add('hide');
   renderEmojis();
+};
+
+quitElem.onclick = () => {
+  ipc.send('quit');
 };
 
