@@ -16,7 +16,7 @@ const backElem = $('.back');
 
 // Display all the faces
 function renderEmojis() {
-  mainElem.innerHTML = faces.map(e => `<a class="emoji">${e}</a>`).join('');
+  mainElem.innerHTML = faces.map((e, idx) => `<a class="emoji" tabindex="${idx}">${e}</a>`).join('');
 }
 
 /**
