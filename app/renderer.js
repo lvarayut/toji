@@ -78,14 +78,30 @@ quitElem.onclick = () => {
 document.onkeydown = (e) => {
   e.preventDefault();
 
+  const emojiElems = $$('.emoji');
+  const focusElem = $('.emoji:focus');
+  const firstEmojiElem = $('.emoji:first-child');
+  const focusIndex = Array.prototype.indexOf.call(emojiElems, focusElem);
+
   switch (e.which || e.keyCode) {
     case 37: // left
+      // Move to the left if the focus is on the right
+      if (focusIndex % 2 !== 0) emojiElems[focusIndex - 1].focus();
       break;
     case 38: // up
+      // Jump backward two elements if the element is exist
+      if (focusIndex - 2 >= 0) emojiElems[focusIndex - 2].focus();
       break;
     case 39: // right
+      // Move to the right if the focus is on the left
+      if (focusIndex % 2 === 0) emojiElems[focusIndex + 1].focus();
       break;
     case 40: // down
+      // Focus on the first element, if no element was focused
+      if (!focusElem) firstEmojiElem.focus();
+
+      // Jump forward two elements if the element is exist
+      else if (focusIndex + 2 < emojiElems.length) emojiElems[focusIndex + 2].focus();
       break;
     default: return;
   }
