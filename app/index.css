@@ -87,9 +87,11 @@ a.emoji {
   width: 50%;
 }
 
-a.emoji:hover {
+a.emoji:hover,
+a.emoji:focus {
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
   color: #3893C6;
+  outline: none;
 }
 
 /* ==========================================================================
