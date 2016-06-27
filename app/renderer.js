@@ -48,12 +48,18 @@ function setupSettings() {
 
 renderEmojis();
 
-// Bind onclick to emoji elements
+function copyTextToClipboard(e) {
+  clipboard.writeText(e.target.innerHTML);
+  ipc.send('hide');
+}
+
+// Bind onclick and onkeydown "enter" to emoji elements
 const elems = $$('.emoji');
 for (let i = 0; i < elems.length; i++) {
-  elems[i].onclick = (e) => {
-    clipboard.writeText(e.target.innerHTML);
-    ipc.send('hide');
+  elems[i].onclick = copyTextToClipboard;
+  elems[i].onkeydown = (e) => {
+    const enterKeyCode = 13;
+    if (e.which === enterKeyCode || e.keyCode === enterKeyCode) copyTextToClipboard(e);
   };
 }
 
