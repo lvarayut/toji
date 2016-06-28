@@ -14,9 +14,24 @@ const settingsElem = $('.gear');
 const quitElem = $('.quit');
 const backElem = $('.back');
 
+function copyTextToClipboard(e) {
+  clipboard.writeText(e.target.innerHTML);
+  ipc.send('hide');
+}
+
 // Display all the faces
 function renderEmojis() {
   mainElem.innerHTML = faces.map((e, idx) => `<a class="emoji" tabindex="${idx}">${e}</a>`).join('');
+
+  // Bind onclick and onkeydown "enter" to emoji elements
+  const elems = $$('.emoji');
+  for (let i = 0; i < elems.length; i++) {
+    elems[i].onclick = copyTextToClipboard;
+    elems[i].onkeydown = (e) => {
+      const enterKeyCode = 13;
+      if (e.which === enterKeyCode || e.keyCode === enterKeyCode) copyTextToClipboard(e);
+    };
+  }
 }
 
 /**
@@ -47,21 +62,6 @@ function setupSettings() {
 }
 
 renderEmojis();
-
-function copyTextToClipboard(e) {
-  clipboard.writeText(e.target.innerHTML);
-  ipc.send('hide');
-}
-
-// Bind onclick and onkeydown "enter" to emoji elements
-const elems = $$('.emoji');
-for (let i = 0; i < elems.length; i++) {
-  elems[i].onclick = copyTextToClipboard;
-  elems[i].onkeydown = (e) => {
-    const enterKeyCode = 13;
-    if (e.which === enterKeyCode || e.keyCode === enterKeyCode) copyTextToClipboard(e);
-  };
-}
 
 // Bind onclick to settings element
 settingsElem.onclick = () => {
