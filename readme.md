@@ -2,6 +2,9 @@
 
 > Get an awesome text emoji quickly with a simple shortcut `~(˘▾˘~)`
 
+## Example 
+![Demo](https://cloud.githubusercontent.com/assets/4281887/16457692/9866c01a-3e46-11e6-8e67-0e5200c5a675.gif)
+
 ## Usage 
 
 ### Navigations
