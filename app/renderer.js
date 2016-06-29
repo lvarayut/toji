@@ -82,8 +82,6 @@ quitElem.onclick = () => {
 };
 
 document.onkeydown = (e) => {
-  e.preventDefault();
-
   const emojiElems = $$('.emoji');
   const focusElem = $('.emoji:focus');
   const firstEmojiElem = $('.emoji:first-child');
