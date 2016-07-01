@@ -15,9 +15,9 @@
     "lint": " eslint --ignore-path .gitignore **/*.js",
     "build": "npm run build:osx && npm run build:linux && npm run build:window",
     "build:master": "electron-packager . --out=dist --app-version=$npm_package_version --prune --asar --overwrite",
-    "build:osx": "npm run build:master -- --platform=darwin --arch=x64 --icon=app/icons/Icon.icns && cd dist && zip -9rqy Toji-osx.zip Toji-darwin-x64",
-    "build:linux": "npm run build:master -- --platform=linux --arch=x64 && cd dist && zip -9rqy Toji-linux.zip Toji-linux-x64",
-    "build:window": "npm run build:master -- --platform=win32 --arch=ia32 --icon=app/icons/Icon.ico && cd dist && zip -9rqy Toji-windows.zip Toji-win32-ia32"
+    "build:osx": "npm run build:master -- --platform=darwin --arch=x64 --icon=app/icons/Icon.icns && cd dist/Toji-darwin-x64 && zip -9rqy ../Toji-osx.zip Toji.app",
+    "build:linux": "npm run build:master -- --platform=linux --arch=x64 && cd dist/Toji-linux-x64 && zip -9rqy ../Toji-linux.zip *",
+    "build:window": "npm run build:master -- --platform=win32 --arch=ia32 --icon=app/icons/Icon.ico && cd dist/Toji-win32-ia32 && zip -9rqy ../Toji-windows.zip *"
   },
   "keywords": [
     "toji",
